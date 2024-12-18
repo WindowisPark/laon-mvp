@@ -1,31 +1,26 @@
+# Laon MVP Project - Phase 1
+
+## 프로젝트 개요
+Laon MVP 프로젝트는 감정 분석 및 사용자 맞춤형 수면 백색소음을 제공하는 서비스.  
+프론트엔드는 **React Native**, 백엔드는 **FastAPI**를 기반으로 개발.
 
 ---
 
-#### **3. 코드 리팩토링 및 정리**
-1. **불필요한 파일 제거**:
-   - `__init__.py` 파일들이 잘못된 인코딩으로 생성되었던 문제를 정리했으니, 불필요한 내용이 남아있지 않은지 확인.
+## 프로젝트 구조
 
-2. **코드 포매팅**:
-   - **프론트엔드**: Prettier 적용.
-     ```bash
-     npm install --save-dev prettier
-     npx prettier --write .
-     ```
-   - **백엔드**: Black 적용.
-     ```bash
-     pip install black
-     black app/
-     ```
+```plaintext
+backend/
+├── app/
+│   ├── main.py          # FastAPI 진입점
+│   ├── routes/          # API 라우트
+│   ├── models/          # 데이터베이스 모델
+│   ├── core/            # 설정 및 DB 연결
+│   └── __init__.py      # 패키지 인식 파일
+└── requirements.txt     # Python 패키지 목록
 
-3. **주석 추가**:
-   - 주요 함수와 라우트에 간단한 설명 주석을 추가하세요.
-
----
-
-### **마무리 점검**
-1. **백엔드와 프론트엔드 연결 테스트 확인** ✅
-2. **GitHub에 커밋 및 푸시**:
-   ```bash
-   git add .
-   git commit -m "Day 1: Backend-Frontend setup and API connection test"
-   git push
+frontend/
+├── src/
+│   ├── screens/         # React Native 화면 컴포넌트
+│   ├── api/             # Axios API 설정
+│   └── styles/          # 스타일 파일
+└── App.js               # 진입점
